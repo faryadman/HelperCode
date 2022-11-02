@@ -1,4 +1,8 @@
- DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+ public DataReport(String start, String end) throws ParseException {
+        this.start = start;
+        this.end = end;
+        if (this.start !=null && this.end!=null) {
+            DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
             java.sql.Time timeValue1 = new java.sql.Time(formatter.parse(this.start).getTime());
             java.sql.Time timeValue2 = new java.sql.Time(formatter.parse(this.end).getTime());
 
@@ -6,7 +10,8 @@
             LocalTime to = timeValue2.toLocalTime();
             Duration d = Duration.between(from, to);
             HourMinuteActivity=(String.valueOf(d.toHoursPart()+":"+d.toMinutesPart()));
-            
+        }
+    }
             
             
             
