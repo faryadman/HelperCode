@@ -1,1 +1,5 @@
 String.format("%02d",Integer.parseInt( result[2]))
+
+
+String.format("%02d", myNumber)
+String.format("%02.0f", myNumber);
